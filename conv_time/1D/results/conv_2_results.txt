@@ -1,0 +1,292 @@
+INPUT: 512, FILTER: 512 ######################################################################################################
+==PROF== Connected to process 2543 (/home/will/APSK2/cuda/BLAS/conv_time/1D/bin/conv_2)
+==PROF== Profiling "ConvKernel" - 0: 0%....50%....100% - 9 passes
+  545226 microsec for 1D convolution on GPU.
+==PROF== Disconnected from process 2543
+[2543] conv_2@127.0.0.1
+  ConvKernel(int *, int *, int, int) (4, 1, 1)x(256, 1, 1), Context 1, Stream 13, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ------------- ------------
+    Metric Name               Metric Unit Metric Value
+    ----------------------- ------------- ------------
+    DRAM Frequency          cycle/nsecond         5.45
+    SM Frequency            cycle/usecond       937.72
+    Elapsed Cycles                  cycle        38620
+    Memory Throughput                   %         8.53
+    DRAM Throughput                     %         0.12
+    Duration                      usecond        41.18
+    L1/TEX Cache Throughput             %        56.98
+    L2 Cache Throughput                 %         0.18
+    SM Active Cycles                cycle      5778.95
+    Compute (SM) Throughput             %         8.53
+    ----------------------- ------------- ------------
+
+    OPT   This kernel grid is too small to fill the available resources on this device, resulting in only 0.0 full      
+          waves across all SMs. Look at Launch Statistics for more details.                                             
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                      4
+    Registers Per Thread             register/thread              16
+    Shared Memory Configuration Size           Kbyte           16.38
+    Driver Shared Memory Per Block       Kbyte/block            1.02
+    Dynamic Shared Memory Per Block      Kbyte/block            1.02
+    Static Shared Memory Per Block        byte/block               0
+    Threads                                   thread            1024
+    Waves Per SM                                                0.03
+    -------------------------------- --------------- ---------------
+
+    OPT   Est. Speedup: 80%                                                                                             
+          The grid for this launch is configured to execute only 4 blocks, which is less than the GPU's 20              
+          multiprocessors. This can underutilize some multiprocessors. If you do not intend to execute this kernel      
+          concurrently with other workloads, consider reducing the block size to have at least one block per            
+          multiprocessor or increase the size of the grid to fully utilize the available hardware resources. See the    
+          Hardware Model (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-hw-model)            
+          description for more details on launch configurations.                                                        
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block           16
+    Block Limit Shared Mem                block            8
+    Block Limit Warps                     block            6
+    Theoretical Active Warps per SM        warp           48
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        13.87
+    Achieved Active Warps Per SM           warp         6.66
+    ------------------------------- ----------- ------------
+
+    OPT   Est. Local Speedup: 86.13%                                                                                    
+          The difference between calculated theoretical (100.0%) and measured achieved occupancy (13.9%) can be the     
+          result of warp scheduling overheads or workload imbalances during the kernel execution. Load imbalances can   
+          occur between warps within a block as well as across blocks of the same kernel. See the CUDA Best Practices   
+          Guide (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on     
+          optimizing occupancy.                                                                                         
+
+TIMING ###############################################################################################################################
+     672 microsec for 1D convolution on GPU.
+INPUT: 1024, FILTER: 512 ######################################################################################################
+==PROF== Connected to process 2604 (/home/will/APSK2/cuda/BLAS/conv_time/1D/bin/conv_2)
+==PROF== Profiling "ConvKernel" - 0: 0%....50%....100% - 9 passes
+  542116 microsec for 1D convolution on GPU.
+==PROF== Disconnected from process 2604
+[2604] conv_2@127.0.0.1
+  ConvKernel(int *, int *, int, int) (8, 1, 1)x(256, 1, 1), Context 1, Stream 13, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ------------- ------------
+    Metric Name               Metric Unit Metric Value
+    ----------------------- ------------- ------------
+    DRAM Frequency          cycle/nsecond         5.47
+    SM Frequency            cycle/usecond       939.46
+    Elapsed Cycles                  cycle        38812
+    Memory Throughput                   %        16.97
+    DRAM Throughput                     %         0.17
+    Duration                      usecond        41.31
+    L1/TEX Cache Throughput             %        60.70
+    L2 Cache Throughput                 %         0.26
+    SM Active Cycles                cycle     10849.05
+    Compute (SM) Throughput             %        16.97
+    ----------------------- ------------- ------------
+
+    OPT   This kernel grid is too small to fill the available resources on this device, resulting in only 0.1 full      
+          waves across all SMs. Look at Launch Statistics for more details.                                             
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                      8
+    Registers Per Thread             register/thread              16
+    Shared Memory Configuration Size           Kbyte           16.38
+    Driver Shared Memory Per Block       Kbyte/block            1.02
+    Dynamic Shared Memory Per Block      Kbyte/block            1.02
+    Static Shared Memory Per Block        byte/block               0
+    Threads                                   thread            2048
+    Waves Per SM                                                0.07
+    -------------------------------- --------------- ---------------
+
+    OPT   Est. Speedup: 60%                                                                                             
+          The grid for this launch is configured to execute only 8 blocks, which is less than the GPU's 20              
+          multiprocessors. This can underutilize some multiprocessors. If you do not intend to execute this kernel      
+          concurrently with other workloads, consider reducing the block size to have at least one block per            
+          multiprocessor or increase the size of the grid to fully utilize the available hardware resources. See the    
+          Hardware Model (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-hw-model)            
+          description for more details on launch configurations.                                                        
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block           16
+    Block Limit Shared Mem                block            8
+    Block Limit Warps                     block            6
+    Theoretical Active Warps per SM        warp           48
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        14.16
+    Achieved Active Warps Per SM           warp         6.80
+    ------------------------------- ----------- ------------
+
+    OPT   Est. Local Speedup: 85.84%                                                                                    
+          The difference between calculated theoretical (100.0%) and measured achieved occupancy (14.2%) can be the     
+          result of warp scheduling overheads or workload imbalances during the kernel execution. Load imbalances can   
+          occur between warps within a block as well as across blocks of the same kernel. See the CUDA Best Practices   
+          Guide (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on     
+          optimizing occupancy.                                                                                         
+
+TIMING ###############################################################################################################################
+     624 microsec for 1D convolution on GPU.
+INPUT: 4096, FILTER: 512 ######################################################################################################
+==PROF== Connected to process 2664 (/home/will/APSK2/cuda/BLAS/conv_time/1D/bin/conv_2)
+==PROF== Profiling "ConvKernel" - 0: 0%....50%....100% - 9 passes
+  445695 microsec for 1D convolution on GPU.
+==PROF== Disconnected from process 2664
+[2664] conv_2@127.0.0.1
+  ConvKernel(int *, int *, int, int) (32, 1, 1)x(256, 1, 1), Context 1, Stream 13, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ------------- ------------
+    Metric Name               Metric Unit Metric Value
+    ----------------------- ------------- ------------
+    DRAM Frequency          cycle/nsecond         5.47
+    SM Frequency            cycle/usecond       939.72
+    Elapsed Cycles                  cycle        41979
+    Memory Throughput                   %        62.75
+    DRAM Throughput                     %         0.47
+    Duration                      usecond        44.67
+    L1/TEX Cache Throughput             %        79.87
+    L2 Cache Throughput                 %         0.73
+    SM Active Cycles                cycle     32980.65
+    Compute (SM) Throughput             %        62.75
+    ----------------------- ------------- ------------
+
+    INF   Compute and Memory are well-balanced: To reduce runtime, both computation and memory traffic must be reduced. 
+          Check both the Compute Workload Analysis and Memory Workload Analysis sections.                               
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                     32
+    Registers Per Thread             register/thread              16
+    Shared Memory Configuration Size           Kbyte           16.38
+    Driver Shared Memory Per Block       Kbyte/block            1.02
+    Dynamic Shared Memory Per Block      Kbyte/block            1.02
+    Static Shared Memory Per Block        byte/block               0
+    Threads                                   thread            8192
+    Waves Per SM                                                0.27
+    -------------------------------- --------------- ---------------
+
+    OPT   If you execute __syncthreads() to synchronize the threads of a block, it is recommended to have more than the 
+          achieved 1 blocks per multiprocessor. This way, blocks that aren't waiting for __syncthreads() can keep the   
+          hardware busy.                                                                                                
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block           16
+    Block Limit Shared Mem                block            8
+    Block Limit Warps                     block            6
+    Theoretical Active Warps per SM        warp           48
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        24.01
+    Achieved Active Warps Per SM           warp        11.53
+    ------------------------------- ----------- ------------
+
+    OPT   Est. Local Speedup: 75.99%                                                                                    
+          The difference between calculated theoretical (100.0%) and measured achieved occupancy (24.0%) can be the     
+          result of warp scheduling overheads or workload imbalances during the kernel execution. Load imbalances can   
+          occur between warps within a block as well as across blocks of the same kernel. See the CUDA Best Practices   
+          Guide (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on     
+          optimizing occupancy.                                                                                         
+
+TIMING ###############################################################################################################################
+     900 microsec for 1D convolution on GPU.
+INPUT: 16384, FILTER: 512 ######################################################################################################
+==PROF== Connected to process 2725 (/home/will/APSK2/cuda/BLAS/conv_time/1D/bin/conv_2)
+==PROF== Profiling "ConvKernel" - 0: 0%....50%....100% - 9 passes
+  536480 microsec for 1D convolution on GPU.
+==PROF== Disconnected from process 2725
+[2725] conv_2@127.0.0.1
+  ConvKernel(int *, int *, int, int) (128, 1, 1)x(256, 1, 1), Context 1, Stream 13, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ------------- ------------
+    Metric Name               Metric Unit Metric Value
+    ----------------------- ------------- ------------
+    DRAM Frequency          cycle/nsecond         5.49
+    SM Frequency            cycle/usecond       943.74
+    Elapsed Cycles                  cycle       123007
+    Memory Throughput                   %        85.66
+    DRAM Throughput                     %         0.59
+    Duration                      usecond       130.34
+    L1/TEX Cache Throughput             %        95.24
+    L2 Cache Throughput                 %         0.77
+    SM Active Cycles                cycle    110636.80
+    Compute (SM) Throughput             %        85.66
+    ----------------------- ------------- ------------
+
+    INF   The kernel is utilizing greater than 80.0% of the available compute or memory performance of the device. To   
+          further improve performance, work will likely need to be shifted from the most utilized to another unit.      
+          Start by analyzing workloads in the Compute Workload Analysis section.                                        
+
+    Section: Launch Statistics
+    -------------------------------- --------------- ---------------
+    Metric Name                          Metric Unit    Metric Value
+    -------------------------------- --------------- ---------------
+    Block Size                                                   256
+    Function Cache Configuration                     CachePreferNone
+    Grid Size                                                    128
+    Registers Per Thread             register/thread              16
+    Shared Memory Configuration Size           Kbyte           16.38
+    Driver Shared Memory Per Block       Kbyte/block            1.02
+    Dynamic Shared Memory Per Block      Kbyte/block            1.02
+    Static Shared Memory Per Block        byte/block               0
+    Threads                                   thread           32768
+    Waves Per SM                                                1.07
+    -------------------------------- --------------- ---------------
+
+    OPT   Est. Speedup: 50%                                                                                             
+          A wave of thread blocks is defined as the maximum number of blocks that can be executed in parallel on the    
+          target GPU. The number of blocks in a wave depends on the number of multiprocessors and the theoretical       
+          occupancy of the kernel. This kernel launch results in 1 full waves and a partial wave of 7 thread blocks.    
+          Under the assumption of a uniform execution duration of all thread blocks, the partial wave may account for   
+          up to 50.0% of the total kernel runtime with a lower occupancy of 33.1%. Try launching a grid with no         
+          partial wave. The overall impact of this tail effect also lessens with the number of full waves executed for  
+          a grid. See the Hardware Model                                                                                
+          (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-hw-model) description for more      
+          details on launch configurations.                                                                             
+
+    Section: Occupancy
+    ------------------------------- ----------- ------------
+    Metric Name                     Metric Unit Metric Value
+    ------------------------------- ----------- ------------
+    Block Limit SM                        block           16
+    Block Limit Registers                 block           16
+    Block Limit Shared Mem                block            8
+    Block Limit Warps                     block            6
+    Theoretical Active Warps per SM        warp           48
+    Theoretical Occupancy                     %          100
+    Achieved Occupancy                        %        66.92
+    Achieved Active Warps Per SM           warp        32.12
+    ------------------------------- ----------- ------------
+
+    OPT   Est. Local Speedup: 33.08%                                                                                    
+          The difference between calculated theoretical (100.0%) and measured achieved occupancy (66.9%) can be the     
+          result of warp scheduling overheads or workload imbalances during the kernel execution. Load imbalances can   
+          occur between warps within a block as well as across blocks of the same kernel. See the CUDA Best Practices   
+          Guide (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on     
+          optimizing occupancy.                                                                                         
+
+TIMING ###############################################################################################################################
+     851 microsec for 1D convolution on GPU.
